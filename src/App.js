@@ -1,4 +1,12 @@
-import { Button, ChakraProvider, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Button,
+  ChakraProvider,
+  Flex,
+  Grid,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import iconSuvs from "./images/icon-suvs.svg";
 import iconSedans from "./images/icon-sedans.svg";
 import iconLuxury from "./images/icon-luxury.svg";
@@ -16,14 +24,14 @@ const PreviewColumn = ({ bgColor, icon, title, description, ...rest }) => (
     direction="column"
     flex="1 1 20ch"
     sx={{
-      "& > *": { m: 3 }
+      "& > *": { m: 3 },
     }}
   >
-    <Image src={icon} />
-    <Heading color="veryLightGray" textTransform="uppercase" fontSize='4xl'>
+    <Image src={icon} alt={title} />
+    <Heading color="veryLightGray" textTransform="uppercase" fontSize="4xl">
       {title}
     </Heading>
-    <Text color="transparentWhite" >{description}</Text>
+    <Text color="transparentWhite">{description}</Text>
     <Button mt={20} color={bgColor} borderRadius="3xl">
       Learn More
     </Button>
@@ -33,13 +41,13 @@ const PreviewColumn = ({ bgColor, icon, title, description, ...rest }) => (
 function App() {
   return (
     <ChakraProvider theme={customTheme}>
-      <Grid h='100vh' justifyContent='center' alignItems="center" bg="veryLightGray">
-        <Flex
-          borderRadius="xl"
-          overflow="hidden"
-          wrap="wrap"
-          maxWidth="850px"
-        >
+      <Grid
+        h="100vh"
+        justifyContent="center"
+        alignItems="center"
+        bg="veryLightGray"
+      >
+        <Flex borderRadius="xl" overflow="hidden" wrap="wrap" maxWidth="850px">
           <PreviewColumn
             bgColor="sedans"
             title="Sedans"
