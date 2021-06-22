@@ -1,38 +1,30 @@
-import {
-  Button,
-  Center,
-  ChakraProvider,
-  Flex,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Button, ChakraProvider, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react";
 import iconSuvs from "./images/icon-suvs.svg";
 import iconSedans from "./images/icon-sedans.svg";
 import iconLuxury from "./images/icon-luxury.svg";
 import customTheme from "./customTheme";
-import '@fontsource/lexend-deca/400.css'
-import '@fontsource/big-shoulders-display/700.css'
+import "@fontsource/lexend-deca/400.css";
+import "@fontsource/big-shoulders-display/700.css";
 
 const PreviewColumn = ({ bgColor, icon, title, description, ...rest }) => (
   <Flex
     bgColor={bgColor}
-    p={4}
+    p={7}
     className="preview-column"
     alignItems="flex-start"
     justify="space-between"
     direction="column"
-    flex="1 1 30ch"
+    flex="1 1 20ch"
     sx={{
-      "& > *": { m: 4 },
+      "& > *": { m: 3 }
     }}
   >
     <Image src={icon} />
-    <Heading color="transparentWhite" textTransform="uppercase">
+    <Heading color="veryLightGray" textTransform="uppercase" fontSize='4xl'>
       {title}
     </Heading>
-    <Text color="transparentWhite">{description}</Text>
-    <Button mt={16} color={bgColor} borderRadius="3xl" >
+    <Text color="transparentWhite" >{description}</Text>
+    <Button mt={20} color={bgColor} borderRadius="3xl">
       Learn More
     </Button>
   </Flex>
@@ -41,13 +33,12 @@ const PreviewColumn = ({ bgColor, icon, title, description, ...rest }) => (
 function App() {
   return (
     <ChakraProvider theme={customTheme}>
-      <Center>
+      <Grid h='100vh' justifyContent='center' alignItems="center" bg="veryLightGray">
         <Flex
           borderRadius="xl"
           overflow="hidden"
-          m={8}
           wrap="wrap"
-          maxWidth="container.lg"
+          maxWidth="850px"
         >
           <PreviewColumn
             bgColor="sedans"
@@ -68,7 +59,7 @@ function App() {
             description="Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style."
           />
         </Flex>
-      </Center>
+      </Grid>
     </ChakraProvider>
   );
 }

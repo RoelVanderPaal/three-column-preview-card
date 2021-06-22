@@ -6,7 +6,8 @@ const customTheme = extendTheme(
       sedans: "hsl(31, 77%, 52%)",
       suvs: "hsl(184, 100%, 22%)",
       luxury: "hsl(179, 100%, 13%)",
-      transparentWhite: "hsla(0, 0%, 100%, 0.75)"
+      transparentWhite: "hsla(0, 0%, 100%, 0.75)",
+      veryLightGray: "hsl(0, 0%, 95%)"
     },
     fonts: {
       body: "Lexend Deca",
@@ -23,7 +24,8 @@ const customTheme = extendTheme(
       },
       Text: {
         baseStyle: {
-          fontSize: "15px"
+          fontSize: "15px",
+          lineHeight:'tall'
         },
       }
     }
